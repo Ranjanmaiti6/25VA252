@@ -3,37 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Document Object Model</title>
+    <style>
+        #text{
+            color: blueviolet;
+        }
+    </style>
 </head>
 <body>
-    
-    <!-- //  DOM -->
-    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, dolor?</p> -->
+    <input type="text" placeholder="Enter your Name: " id="InputData">
+    <h2 id="text"></h2>
+    <button onclick="result()">Click On Me!</button>
 
-    <script>
-        let marks = [90,40,20,60,50];
-
-        let sum = 0;
-        let avg = 0;
-        for(let i in marks){
-            sum += marks[i];
-        }
-        avg = sum/marks.length;
+    <p id="para">Lorem ipsum,  elit. Ipsam perferendis saepe ipsum. Laborum voluptatem enim asperiores consequatur doloremque! Facere, earum?Lorem ipsum,  elit. Ipsam perferendis saepe ipsum. Laborum voluptatem enim asperiores consequatur doloremque! Facere, earum?Lorem ipsum,  elit. Ipsam perferendis saepe ipsum. Laborum voluptatem enim asperiores consequatur doloremque! Facere, earum?</p>
 
 
-        if(avg>=60){
-            console.log("First DIV Marks");
-        }
-        else if(avg < 60 && avg>=40){
-            console.log("Sec DIV Marks");
-        }
-        else if(avg<40 && avg >= 30){
-            console.log("THIRD DIV marks");
-        }
-        else{
-            console.log("Fail");
-        }
-        
-    </script>
+    <script src="DOM.js"></script>
 </body>
 </html>
