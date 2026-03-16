@@ -46,6 +46,24 @@
         }
         div(12,6);
 
+        //Arrow fun with single line statement
+        let msg =()=>console.log("Hello ABES");
+        msg();
+
+
+        // Callback Function: 
+        function sub(callback){
+            var num1 = 20;
+            var num2 = 10;
+            var res = num1 - num2;
+            callback(res);
+        }
+        function displayRes(res){
+            console.log("Result is: " + res);
+        }
+        sub(displayRes);
+
+
     </script>
 </body>
 </html>
