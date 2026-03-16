@@ -19,6 +19,33 @@
             console.log("Ranjan");
         }
         demo2();
+
+        //Functoin with Default para
+        function add(a , b=10){
+            console.log("Addition of two no is: " + (a+b));
+        }
+        add(23,20);
+
+
+        // Annoymous FUnction 
+        let cal = function(){
+            var num1 = 25;
+            var num2 = 55;
+            var res = num1 * num2;
+            console.log("MUltiply of num1 and num2 is: " + res);
+        }
+        cal();  //cal is a funtion now
+
+
+        // Arrow Function with myltiple line stetment
+        let div = ()=>{ 
+            var num1 = x;
+            num2 = y;
+            var res = x/y;
+            console.log("DIv is: "+res);
+        }
+        div(12,6);
+
     </script>
 </body>
 </html>
