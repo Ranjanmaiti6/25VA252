@@ -107,7 +107,7 @@
         async function userData() {
             //let response = await fetch('https://dummyjson.com/products/');
             //let response = await fetch('https://dummyjson.com/products?limit=10&skip=10&select=title,price');
-            let response = await fetch('https://api.github.com/users/ranjanmaiti');
+            let response = await fetch('https://api.github.com/users/');
             let responseData = await response.json();
 
             console.log(responseData);
@@ -117,20 +117,70 @@
         }
         userData();
 
-        //Error handling using try catch
-        try{
-            let response = await fetch('https://api.github.com/users/ranjan');
-            let responseData = await response.json();
 
-            console.log(responseData);
+        /*
+            //Error handling using try catch
+                try{
+                    let response = await fetch('https://api.github.com/users/ranjan');
+                    let responseData = await response.json();
 
-            document.writeln(responseData.id);
-            documen.writeln(responseData.bio);
+                    console.log(responseData);
+
+                    document.writeln(responseData.id);
+                    documen.writeln(responseData.bio);
+                }
+                catch(error){
+                    console.log(error);
+                }
+                userData();
+        */
+
+
+
+        //Local Storage
+        let myInfo = {
+            name : "Ranjan Maiti",
+            age : 19,
+            mob: 8250255505,
+            email : "Ranjanmaiti.tech@gmail.com"
         }
-        catch(error){
-            console.log(error);
-        }
-        
+
+        //convert the obj to string using stringify
+        let myInfoData = JSON.stringify(myInfo);
+
+        //set Data
+        localStorage.setItem('prefrence' , myInfoData);
+
+        // Retrieving and parsing the object back
+        let getMyInfo = localStorage.getItem('prefrence');
+
+        //parse the object
+        const finalData = JSON.parse(getMyInfoData);
+        console.log(finalData.name);
+
+
+        // Higher Order Functiion: 
+
+
+        // map() filter() reduce() forEach()
+
+        let num = [3,5,2,6,3,6,3,9];
+        //find the squre of num
+        let result = num.map(n=>n*n);
+        console.log(`Squre of num is: ${result}`);
+
+        //find the number greater than 3
+        let result2 = num.filter(n=>n>3);
+        console.log(`Sorting of num array os ${result2}`);
+
+        //find sum of num array
+        let sum = num.reduce((total,n)=>total+n);
+        console.log(`Addition of num array elements is ${sum}`);
+
+        //find multiple of 2 elements of num array
+        let double = num.forEach(n=>n*2);
+        onclose.log(double)
+
 
     </script>
 </body>
