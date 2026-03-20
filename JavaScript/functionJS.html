@@ -70,6 +70,68 @@
         setTimeout(msg1,2000);
         //2000 = 2 sec
 
+        // IIFE     ()()
+        (function(a, b){
+            console.log(`First Parameter ${a} and Second para ${b}`);
+            var re = a + b;
+            console.log(`Result is ${re}`);
+        })(4, 5);
+
+        //Sort code using arrow fn 
+        (msg=>console.log("Hello IIFE"))();
+
+
+        //  Promises:-
+        //3 stages painding fullfiled and rejected
+        
+        let promise = new Promise(function(resolve, reject){
+            let age = 25;
+            if(age>=18){
+                resolve("Valid age");
+            }
+            else{
+                reject("wait for fext year");
+            }
+        });
+        console.log(promise);
+        // promise.then().catch()
+        promise
+            .then(msg=>console.log(msg))
+                .catch(error=>console.log(error));
+
+
+        //async awit.........       #inportant
+
+        //https://dummyjson.com/products
+
+        async function userData() {
+            //let response = await fetch('https://dummyjson.com/products/');
+            //let response = await fetch('https://dummyjson.com/products?limit=10&skip=10&select=title,price');
+            let response = await fetch('https://api.github.com/users/ranjanmaiti');
+            let responseData = await response.json();
+
+            console.log(responseData);
+
+            document.writeln(responseData.id);
+            documen.writeln(responseData.bio)
+        }
+        userData();
+
+        //Error handling using try catch
+        try{
+            let response = await fetch('https://api.github.com/users/ranjan');
+            let responseData = await response.json();
+
+            console.log(responseData);
+
+            document.writeln(responseData.id);
+            documen.writeln(responseData.bio);
+        }
+        catch(error){
+            console.log(error);
+        }
+        
+
     </script>
 </body>
 </html>
