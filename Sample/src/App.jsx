@@ -95,16 +95,16 @@
 
 //exp9
 
-// import './App.css'
-// import Exp9 from './component/Exp9';
+import './App.css'
+import Exp9 from './component/Exp9';
 
-// function App() {
+function App() {
 
-//   return (
-//     <>
-//       <Exp9 />
-//     </>
-//   )
-// }
+  return (
+    <>
+      <Exp9 />
+    </>
+  )
+}
 
-// export default App
+export default App
