@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Experiment 6 - DOM Manipulation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            transition: 0.3s;
+        }
+
+        h1 {
+            color: darkblue;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        input {
+            padding: 8px;
+            width: 250px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="heading">DOM Manipulation Example</h1>
+
+    <input type="text" id="messageInput" placeholder="Enter heading text">
+
+    <br><br>
+
+    <button onclick="changeHeading()">Change Heading</button>
+
+    <button onclick="changeBackground()">Change Background</button>
+
+    <button onclick="increaseFont()">Increase Font Size</button>
+
+    <button onclick="toggleParagraph()">Show/Hide Paragraph</button>
+
+    <button onclick="resetPage()">Reset</button>
+
+    <p id="para">
+        This paragraph can be modified using JavaScript events.
+    </p>
+
+    <script>
+
+        // Change heading text
+        function changeHeading() {
+            let text = document.getElementById("messageInput").value;
+            document.getElementById("heading").innerHTML = text;
+        }
+
+        // Change background color
+        function changeBackground() {
+            document.body.style.backgroundColor = "lightblue";
+        }
+
+        // Increase font size
+        function increaseFont() {
+            document.getElementById("para").style.fontSize = "28px";
+        }
+
+        // Show/Hide paragraph
+        function toggleParagraph() {
+            let para = document.getElementById("para");
+
+            if (para.style.display === "none") {
+                para.style.display = "block";
+            } else {
+                para.style.display = "none";
+            }
+        }
+
+        // Reset page
+        function resetPage() {
+            location.reload();
+        }
+
+        // onmouseover event
+        document.getElementById("heading").onmouseover = function () {
+            this.style.color = "red";
+        };
+
+        // onchange event
+        document.getElementById("messageInput").onchange = function () {
+            alert("Input changed!");
+        };
+
+        // addEventListener example
+        document.getElementById("para").addEventListener("mouseover", function () {
+            this.style.color = "green";
+        });
+
+    </script>
+
+</body>
+</html>
